@@ -1,11 +1,12 @@
 <ion-header>
   <ion-navbar>
     <ion-title>
-      About
+      {{ translationService.translations?.aboutTitle }}
     </ion-title>
   </ion-navbar>
 </ion-header>
 
 <ion-content padding>
-  {{ translationService.translations.aboutText }}
+  <img src="assets/img/dream.jpg" style="height:10rem; width: 100%;">
+  {{ translationService.translations?.aboutText }}
 </ion-content>

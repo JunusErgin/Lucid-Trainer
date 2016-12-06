@@ -17,7 +17,7 @@ export class NotificationService {
       alarm1.setHours(10);
       let alarm2: Date = new Date();
       alarm2.setMinutes(0);
-      alarm2.setHours(21);
+      alarm2.setHours(20);
       this.createNotification(title, body, alarm1);
       this.createNotification(title, body, alarm2);
     }

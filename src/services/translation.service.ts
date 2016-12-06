@@ -33,6 +33,7 @@ export class TranslationService {
       'The text will be blurred or change every time you try to read it, if you are in a dream.';
 
     this.translations.settingsTitle = 'Settings';
+    this.translations.tryAgain = 'Try again';
 
     console.log('Loaded language', this.userLanguage, this.translations);
   }

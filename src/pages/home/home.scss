@@ -11,19 +11,31 @@ page-home {
 }
 
 .dream-status {
-  margin-top: 5rem;
   color: red;
   font-size: 5rem;
   text-align: center;
 }
 
+.dream-status-wrapper {
+  margin-top: 3rem;
+}
+
 .dream-text {
   margin-top: 5rem;
   font-size: 1rem;
+  text-align: center;
+}
+
+.loading-image-wrapper {
+  display: flex;
 }
 
 .loading-image {
-  display: inline;
+  margin-top: -4rem;
+  margin-left: auto;
+  margin-right: auto;
+  max-height: 15rem;
+  width: auto;
 }
 
 .dream-content {

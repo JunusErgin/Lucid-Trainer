@@ -1,20 +1,22 @@
 <ion-content padding class="blue-background">
   <h2 class="home-headline">{{ translationService?.translations?.homeHeadline }}</h2>
   <div class="dream-content">
-    <h1 class="dream-status" *ngIf="!checkingDream">{{ translationService?.translations?.no }}</h1>
+    <div class="dream-status-wrapper">
+      <h1 class="dream-status" *ngIf="!checkingDream">{{ translationService?.translations?.no }}</h1>
+    </div>
     <!-- Show if dream state is displayed -->
-    <p class="dream-text" *ngIf="!checkingDream">
+    <div class="dream-text" *ngIf="!checkingDream">
       {{ translationService?.translations?.homeText }}
-    </p>
+    </div>
 
     <!-- Show if dreaming is checked again -->
-    <p class="dream-text loading-image" *ngIf="checkingDream">
-      <img src="assets/img/loading.gif">
-    </p>
+    <div *ngIf="checkingDream" class="loading-image-wrapper">
+      <img class="loading-image" src="assets/img/loading.gif">
+    </div>
   </div>
   <button ion-button outline block icon-left (click)="checkDreamState()" [disabled]="checkingDream">
     <ion-icon name="refresh"></ion-icon>
-      {{ translationService?.translations?.tryAgain }}
+    {{ translationService?.translations?.tryAgain }}
   </button>
 
 </ion-content>

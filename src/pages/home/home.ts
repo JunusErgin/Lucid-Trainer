@@ -2,7 +2,6 @@ import { Component } from '@angular/core';
 
 import { NavController, Platform } from 'ionic-angular';
 import { TranslationService } from '../../services/translation.service';
-import { LocalNotifications } from 'ionic-native';
 import { NotificationService } from '../../services/notification.service';
 
 declare var AdMob: any;

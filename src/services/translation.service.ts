@@ -34,9 +34,9 @@ export class TranslationService {
     this.translations.aboutText = 'Diese App funktioniert wirklich.';
 
     this.translations.aboutText2 = 'Mit diesem Programm wird luzides Träumen trainiert. ' +
-      'Kontrolliert man über 2 - 3 Wochen mehrmals täglich zu überprüfen ob man schläft, tut man das nach einer Weile auch im Schlaf.' +
+      'Kontrolliert man über 2 - 3 Wochen mehrmals täglich ob man schläft, tut man das nach einer Weile auch im Schlaf.' +
       'Im Schlaf können Texte oft nur schwer gelesen werden oder ändern sich bei mehrfachem Lesen.' +
-      'In diesem Moment merkst Du, dass Du schläfst. Nun kannst du alles machen.';
+      'In diesem Moment merkst Du, dass Du schläfst. Nun kannst du alles machen, was du willst!';
 
     this.translations.aboutText3 = 'Der Fortschrittsbalken zeigt Dir, wie wahrscheinlich du einen luziden Traum haben wirst.';
 

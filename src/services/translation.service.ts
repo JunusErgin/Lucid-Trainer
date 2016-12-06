@@ -41,6 +41,10 @@ export class TranslationService {
 
 
     this.translations.progress = 'Progress';
+    this.translations.deleteProgress = 'Delete progress';
+    this.translations.ok = 'OK';
+    this.translations.deleteProgressTitle = 'Progress deleted';
+    this.translations.deleteProgressMsg = 'Your progress was deleted successfully!';
 
     console.log('Loaded language', this.userLanguage, this.translations);
   }

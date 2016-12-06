@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 
-import { NavController } from 'ionic-angular';
+import { NavController, AlertController } from 'ionic-angular';
 import { TranslationService } from '../../services/translation.service';
 
 @Component({
@@ -9,9 +9,23 @@ import { TranslationService } from '../../services/translation.service';
 })
 export class ContactPage {
 
-  constructor(public navCtrl: NavController,
+  constructor(public alertCtrl: AlertController,
+              public navCtrl: NavController,
               public translationService: TranslationService) {
+  }
 
+  public deleteProgress(): void {
+    localStorage.removeItem('progress');
+    this.showAlert();
+  }
+
+  private showAlert() {
+    let alert = this.alertCtrl.create({
+      title: this.translationService.translations.deleteProgressTitle,
+      subTitle: this.translationService.translations.deleteProgressMsg,
+      buttons: [this.translationService.translations.ok]
+    });
+    alert.present();
   }
 
 }

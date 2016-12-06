@@ -42,6 +42,7 @@ export class HomePage {
   private showInterstitial() {
     this.platform.ready().then(() => {
       if (typeof AdMob !== 'undefined') {
+        console.log('Show interstitial banner', AdMob);
         AdMob.prepareInterstitial({
           adId: this.admobId.interstitial,
           autoShow: true

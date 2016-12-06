@@ -12,6 +12,7 @@ declare var AdMob: any;
 export class HomePage {
   private admobId: any;
   checkingDream: boolean = false;
+  progress: number;
 
   constructor(public navCtrl: NavController,
               private platform: Platform,
@@ -25,6 +26,7 @@ export class HomePage {
     };
 
     this.createBanner();
+    this.updateProgress();
   }
 
 
@@ -73,6 +75,13 @@ export class HomePage {
         AdMob.showBanner(positionMap[position.toLowerCase()]);
       }
     });
+  }
+
+  private updateProgress(): void {
+    let storageEntry: string = localStorage.getItem('progress');
+    this.progress = !!storageEntry ? Math.min(+storageEntry, 99) : 0;
+    this.progress++;
+    localStorage.setItem('progress', this.progress + '');
   }
 
 }

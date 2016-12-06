@@ -19,6 +19,8 @@
     {{ translationService?.translations?.tryAgain }}
   </button>
 
+  <progress class="lucid-progress" [value]="progress" max="100"></progress>
+  {{ translationService?.translations?.progress }}: {{progress}}%
 </ion-content>
 
 <ion-header>

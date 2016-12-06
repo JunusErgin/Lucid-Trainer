@@ -21,6 +21,8 @@ export class TranslationService {
 
 
   private loadEnglishLanguage(): void {
+    this.translations.homeTitle = 'Home';
+    this.translations.no = 'No';
     this.translations.homeHeadline = 'Am I currently dreaming?';
     this.translations.homeText = 'You are not dreaming if you are able to read this text without any issues.';
     this.translations.aboutTitle = 'About';
@@ -29,6 +31,9 @@ export class TranslationService {
       'After checking if you are sleeping in regular periods, you will start to check if you are dreaming in your dreams.' +
       'Reading text while dreaming is not possible for most of the people. ' +
       'The text will be blurred or change every time you try to read it, if you are in a dream.';
+
+    this.translations.settingsTitle = 'Settings';
+
     console.log('Loaded language', this.userLanguage, this.translations);
   }
 

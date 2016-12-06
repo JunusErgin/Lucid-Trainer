@@ -2,7 +2,8 @@ import { Component } from '@angular/core';
 
 import { HomePage } from '../home/home';
 import { AboutPage } from '../about/about';
-import { ContactPage } from '../contact/contact';
+import { ContactPage } from '../settings/settings';
+import { TranslationService } from '../../services/translation.service';
 
 @Component({
   templateUrl: 'tabs.html'
@@ -14,7 +15,7 @@ export class TabsPage {
   tab2Root: any = AboutPage;
   tab3Root: any = ContactPage;
 
-  constructor() {
+  constructor(public translationService: TranslationService) {
 
   }
 }

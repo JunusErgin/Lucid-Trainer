@@ -12,8 +12,9 @@
       <img src="assets/img/loading.gif">
     </p>
   </div>
-  <button ion-button outline block (click)="checkDreamState()">
-    {{ translationService?.translations?.tryAgain }}
+  <button ion-button outline block icon-left (click)="checkDreamState()" [disabled]="checkingDream">
+    <ion-icon name="refresh"></ion-icon>
+      {{ translationService?.translations?.tryAgain }}
   </button>
 
 </ion-content>

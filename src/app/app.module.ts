@@ -6,6 +6,8 @@ import { ContactPage } from '../pages/settings/settings';
 import { HomePage } from '../pages/home/home';
 import { TabsPage } from '../pages/tabs/tabs';
 import { TranslationService } from '../services/translation.service';
+import { LocalNotifications } from 'ionic-native';
+import { NotificationService } from '../services/notification.service';
 
 @NgModule({
   declarations: [
@@ -26,6 +28,6 @@ import { TranslationService } from '../services/translation.service';
     HomePage,
     TabsPage
   ],
-  providers: [TranslationService, {provide: ErrorHandler, useClass: IonicErrorHandler}]
+  providers: [TranslationService, NotificationService, LocalNotifications, {provide: ErrorHandler, useClass: IonicErrorHandler}]
 })
 export class AppModule {}

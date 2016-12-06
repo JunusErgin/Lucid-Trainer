@@ -2,6 +2,8 @@ import { Component } from '@angular/core';
 
 import { NavController, Platform } from 'ionic-angular';
 import { TranslationService } from '../../services/translation.service';
+import { LocalNotifications } from 'ionic-native';
+import { NotificationService } from '../../services/notification.service';
 
 declare var AdMob: any;
 
@@ -15,6 +17,7 @@ export class HomePage {
   progress: number;
 
   constructor(public navCtrl: NavController,
+              private notificationService: NotificationService,
               private platform: Platform,
               public translationService: TranslationService) {
     this.platform = platform;
@@ -27,6 +30,7 @@ export class HomePage {
 
     this.createBanner();
     this.updateProgress();
+    this.setNotifications();
   }
 
 
@@ -83,6 +87,18 @@ export class HomePage {
     this.progress = !!storageEntry ? Math.min(+storageEntry, 99) : 0;
     this.progress++;
     localStorage.setItem('progress', this.progress + '');
+  }
+
+  private setNotifications(): void {
+    this.platform.ready().then(() => {
+
+      let alarmTime: Date = new Date(new Date().getTime() + 5 * 1000);
+      let alarmTime2: Date = new Date(new Date().getTime() + 15 * 1000);
+
+      this.notificationService.createNotification(this.translationService.translations.notificationTitle, this.translationService.translations.notificationMsg, alarmTime);
+      this.notificationService.createNotification(this.translationService.translations.notificationTitle, this.translationService.translations.notificationMsg, alarmTime2);
+      console.log('Loaded notifications plugin', LocalNotifications, alarmTime);
+    });
   }
 
 }

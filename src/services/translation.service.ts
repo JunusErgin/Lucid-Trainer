@@ -46,6 +46,9 @@ export class TranslationService {
     this.translations.deleteProgressTitle = 'Progress deleted';
     this.translations.deleteProgressMsg = 'Your progress was deleted successfully!';
 
+    this.translations.notificationTitle = 'Lucid Dream Trainer';
+    this.translations.notificationBody = 'It is time to check if you are dreaming.';
+
     console.log('Loaded language', this.userLanguage, this.translations);
   }
 

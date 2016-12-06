@@ -30,7 +30,7 @@ export class HomePage {
 
     this.createBanner();
     this.updateProgress();
-    this.setNotifications();
+    this.initSettings();
   }
 
 
@@ -55,6 +55,15 @@ export class HomePage {
     });
   }
 
+
+  private initSettings(): void {
+    this.platform.ready().then(() => {
+      this.notificationService.initSettings(
+        this.translationService.translations.notificationTitle,
+        this.translationService.translations.notificationBody
+      )
+    });
+  }
 
   private createBanner() {
     this.platform.ready().then(() => {
@@ -87,18 +96,6 @@ export class HomePage {
     this.progress = !!storageEntry ? Math.min(+storageEntry, 99) : 0;
     this.progress++;
     localStorage.setItem('progress', this.progress + '');
-  }
-
-  private setNotifications(): void {
-    this.platform.ready().then(() => {
-
-      let alarmTime: Date = new Date(new Date().getTime() + 5 * 1000);
-      let alarmTime2: Date = new Date(new Date().getTime() + 15 * 1000);
-
-      this.notificationService.createNotification(this.translationService.translations.notificationTitle, this.translationService.translations.notificationMsg, alarmTime);
-      this.notificationService.createNotification(this.translationService.translations.notificationTitle, this.translationService.translations.notificationMsg, alarmTime2);
-      console.log('Loaded notifications plugin', LocalNotifications, alarmTime);
-    });
   }
 
 }

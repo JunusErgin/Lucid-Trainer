@@ -48,6 +48,12 @@ export class TranslationService {
 
     this.translations.notificationTitle = 'Lucid Dream Trainer';
     this.translations.notificationBody = 'It is time to check if you are dreaming.';
+    this.translations.notifications = 'Push Notifications';
+    this.translations.notificationsFrequency0 = 'None';
+    this.translations.notificationsFrequency2 = '2 Notifications a day';
+    this.translations.notificationsFrequency4 = '4 Notifications a day';
+    this.translations.notificationsFrequency6 = '6 Notifications a day';
+    this.translations.notificationsFrequency8 = '8 Notifications a day';
 
     console.log('Loaded language', this.userLanguage, this.translations);
   }

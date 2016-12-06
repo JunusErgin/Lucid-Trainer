@@ -7,6 +7,37 @@
 </ion-header>
 
 <ion-content padding>
+  <ion-list radio-group>
+    <ion-list-header>
+      {{ translationService.translations.notifications }}
+    </ion-list-header>
+
+    <ion-item>
+      <ion-label>{{ translationService.translations.notificationsFrequency0 }}</ion-label>
+      <ion-radio [checked]="frequency===0" value="0" (click)="setNotificationFrequency(0)"></ion-radio>
+    </ion-item>
+
+    <ion-item>
+      <ion-label>{{ translationService.translations.notificationsFrequency2 }}</ion-label>
+      <ion-radio [checked]="frequency===2" value="2" (click)="setNotificationFrequency(2)"></ion-radio>
+    </ion-item>
+
+    <ion-item>
+      <ion-label>{{ translationService.translations.notificationsFrequency4 }}</ion-label>
+      <ion-radio [checked]="frequency===4" value="4" (click)="setNotificationFrequency(4)"></ion-radio>
+    </ion-item>
+
+    <ion-item>
+      <ion-label>{{ translationService.translations.notificationsFrequency6 }}</ion-label>
+      <ion-radio [checked]="frequency===6" value="6" (click)="setNotificationFrequency(6)"></ion-radio>
+    </ion-item>
+
+    <ion-item>
+      <ion-label>{{ translationService.translations.notificationsFrequency8 }}</ion-label>
+      <ion-radio [checked]="frequency===8" value="8" (click)="setNotificationFrequency(8)"></ion-radio>
+    </ion-item>
+  </ion-list>
+
   <button ion-button outline block icon-left color="danger" (click)="deleteProgress()">
     <ion-icon name="trash"></ion-icon>
     {{ translationService?.translations?.deleteProgress }}
